@@ -71,7 +71,7 @@ if __name__ == "__main__":
     # 将数据处理下再输出
     df_ = df[['stationcode','timepoint','area', 'positionname', 'latitude', 'longitude',
             'aqi','pm10', 'pm10_24h', 'pm2_5', 'pm2_5_24h','o3', 'o3_24h', 'o3_8h', 'o3_8h_24h',
-            'no2', 'no2_24h', 'so2', 'so2_24h','co', 'co_24h']]
+            'no2', 'no2_24h', 'so2', 'so2_24h','co', 'co_24h','primarypollutant']]
     df_ = df_.where(df_!='-;',np.nan) 
 
     # 将每小时数据保存为 csv 文件
