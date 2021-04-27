@@ -49,11 +49,13 @@ if __name__ == "__main__":
     
     # 从API请求数据
     r = requests.get("http://106.37.208.233:20035/emcpublish/ClientBin/Env-CnemcPublish-RiaServices-EnvCnemcPublishDomainService.svc/binary/GetAQIDataPublishLives")
+    # r = open('cnemc_202104271813','rb') # 本地文件可以直接打开
     
-    # 解析数据,将其变为类似于从文件读取数据的行驶
+    # 解析数据,将其变为类似于从文件读取数据的形式
     records = Record.parse(BufferedReader(BytesIO(r.content)))
+    # records = Record.parse(r) # 本地文件的上面读入后是直接解析的，所以上面是构造成类似的文件流的形式
     
-    # 将print在std.out的内容赋予变量out_xml
+    # 将 print 在 std.out 的内容赋予变量 out_xml
     f = StringIO()
     with redirect_stdout(f):
         print_records(records)
