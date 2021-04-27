@@ -1,0 +1,1 @@
+/usr/bin/wget "http://106.37.208.233:20035/emcpublish/ClientBin/Env-CnemcPublish-RiaServices-EnvCnemcPublishDomainService.svc/binary/GetAQIDataPublishLives" -O /home/opc/cnemc/cnemc_$(date +%Y%m%d%H%M)
